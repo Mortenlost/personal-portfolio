@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro"
+import svgGithub from "../assets/githubLogo.svg"
+import svgLinkedin from "../assets/linkedinLogo.svg"
+
+import { VscGithubAlt } from "react-icons/vsc";
+import { SlSocialLinkedin } from "react-icons/sl";
+---
+
+
+
+
+
+<Layout title="Nav">
+    <header>
+        <nav class="nav-index">
+            <button class="btn">Dowload CV</button>
+            <h1 class="nav--items">About</h1>
+            <h2 class="nav--items">Projects</h2>
+            <a href="https://github.com/Mortenlost" target="__blank"><VscGithubAlt className="nav--items logo" /></a>
+            <a href="https://www.linkedin.com/in/ian-aucoin/" target="__blank"><SlSocialLinkedin className="nav--items logo"/></a>
+        </nav>
+    </header>
+</Layout>
+
+<style>
+    .nav-index{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-top: 1.7em;
+    }
+
+    .logo {
+        margin-top: .3em;
+    }
+
+    .nav--items {
+    margin-left: .8em;
+    cursor: pointer;
+    color: rgba(187,187,187,var(--un-text-opacity));
+    }
+
+    .nav--items:hover, 
+    .nav--items:focus{
+        color: rgb(202, 87, 87);
+    }
+    
+    .btn {
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: .2em 1.7em;
+        margin-right: auto;
+    }
+    
+    .btn:hover,
+    .btn:focus{
+        background-color: rgb(212, 85, 85);
+    }
+</style>
