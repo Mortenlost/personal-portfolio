@@ -5,27 +5,42 @@ import Layout from "../layouts/Layout.astro"
 <Layout title="Main">
     <section>
         <div class="main--name">
-            <span>$ </span>
+            <span>#</span>
             <div id="typed-strings">
-                <h1 class="typed-name">Ian Aucoin<span>&nbsp</span></h1>
+                <h1 class="typed-name">Ian Aucoin</h1>
             </div>
             <span id="typed"></span>
         </div>
         <p class="main--about">
-            Expirienced front end developer Lorem ipsum dolor sit amet 
-            consectetur adipisicing elit. Voluptatum provident eaque sunt
+            Expirienced front end developer, pasionate to deliver the best of me. Chek out my <a class="berry">projects</a> below.
         </p>
         <div class="main--terminal">
-            <div class="terminal-top"></div>
-            <div class="terminal-bot">
-                <h1> <span class="red"> > </span> name.contactInfo</h1>
-                <h2 class="yellow">["Gmail", "LinkedIn", "GitHub"]</h2>
-                <h1> <span class="red"> > </span> name.resume</h1>
-                <h2 class="yellow">"resume.pdf"</h2>
-                <h1> <span class="red"> > </span> name.interests</h1>
-                <h2 class="yellow">["skate", "cooking", "videogames", "art"]</h2>
-                <h1> <span class="red"> > </span> name.skills</h1>
-                <h2 class="yellow">["JavaScript", "Python", "React", "git"]</h2>
+            <div class="terminal-top shadow-withe-box">
+                <img src="/src/assets/minus-svgrepo-com.svg"  class="terminal-top-icons"  alt="minimize -">
+                <img src="/src/assets/square-svgrepo-com.svg"  class="terminal-top-icons"  alt="maximize square">
+                <img src="/src/assets/close-md-svgrepo-com.svg" class="terminal-top-icons" alt="close x">
+            </div>
+            <div class="terminal-bot shadow-withe-box">
+                
+                <div class="terminal-contact">
+                    <h1> <span class="red"> # </span> name.contactInfo</h1>
+                    <h2 class=" terminal-contact-info yellow">
+                        ["<a href="" class="navy">Gmail</a>", 
+                        "<a href="https://www.linkedin.com/in/ian-aucoin-69515a251/" target="_blank" class="navy">LinkedIn</a>", 
+                        "<a href="https://github.com/Mortenlost" target="__blank" class="navy">GitHub</a>"]
+                    </h2>
+                </div>
+                <div class="terminal-contact">
+                    <h1> <span class="red"> # </span> name.resume</h1>
+                    <h2 class="yellow terminal-contact-info">"<a class="navy">resume.pdf</a>"</h2>
+                </div>
+                <div class="terminal-contact">
+                    <h1> <span class="red"> # </span> name.interests</h1>
+                    <h2 class="yellow terminal-contact-info">["skate", "cooking", "videogames", "art"]</h2>
+                </div>
+                <h1> <span class="red"> # </span> name.skills</h1>
+                <h2 class="yellow terminal-contact-info">["JavaScript", "Python", "React", "git"]</h2>
+
             </div>
         </div>
     </section>
@@ -34,7 +49,7 @@ import Layout from "../layouts/Layout.astro"
 <script>
 import Typed from 'typed.js';
 
-  var typed = new Typed('#typed', {
+  let typed = new Typed('#typed', {
         stringsElement: '#typed-strings',
         typeSpeed: 80,
         cursorChar: '|',
@@ -43,14 +58,36 @@ import Typed from 'typed.js';
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+.berry {
+    color: #FF204E;
+    cursor: pointer;
+}
+
+.berry:hover {
+    color: #f87c94;
+    border-bottom: 4px dotted #f87c94;
+}
+
 .red{
-    color: #A0153E;
+    color: #af1946;
 }
 .navy{
-    color: #0048a7;
+    color: #25bfc6;
 }
+
+.navy:hover {
+    color: #1a90c1;
+}
+
 .yellow{
-    color: #f8d863;
+    color: #fad85f;
+}
+
+.shadow-withe-box {
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
 .typed-name {
@@ -63,34 +100,55 @@ import Typed from 'typed.js';
 
 .main--name {
     margin-top: 1em;
-    font-size: 6rem;
+    font-size: 4rem;
     color: #FF204E;
 }
 
 .main--about {
+    font-size: 1.2rem;
+    font-weight: 200;
     margin-top: 1em;
-    max-width: 670px;
-    font-weight: 300;
+    max-width: 620px;
 }
 
 .main--terminal {
+    font-size: 1rem;
+    font-family: "Victor Mono", monospace;
     margin: 2em 0;
     color: #f7f7f7;
 }
 
 .terminal-top {
+    display: flex;
+    justify-content: right;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     width: 100%;
-    height: 4vh;
-    background-color: #f7f7f7;
+    height: 3.5vh;
+    background-color: #fdfdfd;
+}
+
+.terminal-top-icons {
+    margin-right: 10px;
+    width: 25px;
 }
 
 .terminal-bot {
     width: 100%;
-    height: 50vh;
-    background-color: #141414;
+    height: 30em;
+    padding: 35px 0px 0px 30px;
+    background-color: #181818;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+.terminal-contact {
+    margin-bottom: 20px;
+}
+
+.terminal-contact-info {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
 </style>
