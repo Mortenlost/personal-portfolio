@@ -14,47 +14,57 @@ import { SlSocialLinkedin } from "react-icons/sl";
 <Layout title="Nav">
     <header>
         <nav class="nav-index">
-            <button class="btn">Dowload CV</button>
-            <h1 class="nav--items">About</h1>
-            <h2 class="nav--items">Projects</h2>
-            <a href="https://github.com/Mortenlost" target="__blank"><VscGithubAlt className="nav--items logo" /></a>
-            <a href="https://www.linkedin.com/in/ian-aucoin/" target="__blank"><SlSocialLinkedin className="nav--items logo"/></a>
+            <h2 class="nav--items items-animation">Projects</h2>
+            <a href="https://github.com/Mortenlost" target="__blank" aria-label="GitHub icon"><VscGithubAlt className="logo items-animation"/></a>
+            <a href="https://www.linkedin.com/in/ian-aucoin/" target="_blank" aria-label="Linkedin icon"><SlSocialLinkedin className="logo items-animation"/></a>
         </nav>
     </header>
 </Layout>
 
 <style>
+    .items-animation {
+        line-height:1.1em;
+        padding-bottom: calc(2.1*var(--s));
+        background: 
+            conic-gradient(from 135deg at top,var(--c) 90deg,#0000 0) 
+            left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x,
+            conic-gradient(from -45deg at bottom,var(--c) 90deg,#0000 0) 
+            left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+        -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
+        transition: .5s;
+    }
     .nav-index{
         display: flex;
         flex-direction: row;
         justify-content: right;
-        margin-top: 1.7em;
+        margin-top: 2em;
     }
-
     .logo {
-        margin-top: .3em;
+        margin-left: .8em;
+        margin-top: 2px;
+        font-size: 1.3em;
+
+        --c: #FF204E; 
+        --s: .2rem;
+    }
+    .nav--items {
+        margin-left: .8em;
+        cursor: pointer;
+        color: rgba(187,187,187,var(--un-text-opacity));
     }
 
     .nav--items {
-    margin-left: .8em;
-    cursor: pointer;
-    color: rgba(187,187,187,var(--un-text-opacity));
+    --c: #FF204E; 
+    --s: .2rem;
     }
 
-    .nav--items:hover, 
-    .nav--items:focus{
-        color: rgb(202, 87, 87);
-    }
-    
-    .btn {
-        border: 2px solid white;
-        border-radius: 10px;
-        padding: .2em 1.7em;
-        margin-right: auto;
-    }
-    
-    .btn:hover,
-    .btn:focus{
-        background-color: rgb(212, 85, 85);
+    .nav--items:hover,
+    .nav--items:focus,
+    .logo:hover, 
+    .logo:focus {
+        --_p: 100%;
+        color: var(--c);
     }
 </style>

@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Main">
+    <section>
+        <div class="main--name">
+            <span>$ </span>
+            <div id="typed-strings">
+                <h1 class="typed-name">Ian Aucoin<span>&nbsp</span></h1>
+            </div>
+            <span id="typed"></span>
+        </div>
+        <p class="main--about">
+            Expirienced front end developer Lorem ipsum dolor sit amet 
+            consectetur adipisicing elit. Voluptatum provident eaque sunt
+        </p>
+        <div class="main--terminal">
+            <div class="terminal-top"></div>
+            <div class="terminal-bot">
+                <h1> <span class="red"> > </span> name.contactInfo</h1>
+                <h2 class="yellow">["Gmail", "LinkedIn", "GitHub"]</h2>
+                <h1> <span class="red"> > </span> name.resume</h1>
+                <h2 class="yellow">"resume.pdf"</h2>
+                <h1> <span class="red"> > </span> name.interests</h1>
+                <h2 class="yellow">["skate", "cooking", "videogames", "art"]</h2>
+                <h1> <span class="red"> > </span> name.skills</h1>
+                <h2 class="yellow">["JavaScript", "Python", "React", "git"]</h2>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<script>
+import Typed from 'typed.js';
+
+  var typed = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        typeSpeed: 80,
+        cursorChar: '|',
+    });
+
+</script>
+
+<style>
+.red{
+    color: #A0153E;
+}
+.navy{
+    color: #0048a7;
+}
+.yellow{
+    color: #f8d863;
+}
+
+.typed-name {
+    display: none;
+}
+
+#typed-strings {
+    color: #141414;
+}
+
+.main--name {
+    margin-top: 1em;
+    font-size: 6rem;
+    color: #FF204E;
+}
+
+.main--about {
+    margin-top: 1em;
+    max-width: 670px;
+    font-weight: 300;
+}
+
+.main--terminal {
+    margin: 2em 0;
+    color: #f7f7f7;
+}
+
+.terminal-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 4vh;
+    background-color: #f7f7f7;
+}
+
+.terminal-bot {
+    width: 100%;
+    height: 50vh;
+    background-color: #141414;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+</style>
